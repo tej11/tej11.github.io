@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head></head>
-      <body>
-            <button onclick="myFunction()">Ask a question!</button>
-<script>
 
+  <head></head>
+
+  <body><button onclick="myFunction()">Ask a question!</button>
+    <input id="myInput" type="text">
+    <p id="demo"></p>
+    <script>
       function myFunction() {
         let userQuestion = ('Will I have a good day today?');
         let randomNumber = Math.floor(Math.random() * 7);
@@ -38,6 +40,8 @@
         document.getElementById("demo").innerHTML = text;
       }
       document.write(eightball);
+
     </script>
-      </body>
+  </body>
+
 </html>
