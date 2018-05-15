@@ -1,150 +1,152 @@
 <!DOCTYPE html>
 <html>
-<script>
-function getUserChoice() {
-  var userInput = prompt("Do you choose rock, paper, scissors, lizard or spock?");
-  userInput = userInput.toLowerCase();
-  if (userInput === "rock" || userInput === "paper" || userInput === "scissors" || userInput === "bomb" || userInput === "lizard" || userInput === "spock") {
-    return userInput;
-  } else {
-    alert("Error, not acceptable input!");
-  }
-}
+  <script>
+    function getUserChoice() {
+      var userInput = prompt("Do you choose rock, paper, scissors, lizard or spock?");
+      userInput = userInput.toLowerCase();
+      if (userInput === "rock" || userInput === "paper" || userInput === "scissors" || userInput === "bomb" || userInput === "lizard" || userInput === "spock") {
+        return userInput;
+      } else {
+        alert("Error, not acceptable input!");
+      }
+    }
 
-function getComputerChoice() {
-  var randomNumber = Math.floor(Math.random() * 5);
-  switch (randomNumber) {
-    case 0:
-      return "rock";
-    case 1:
-      return "paper";
-    case 2:
-      return "scissors";
-    case 3:
-      return "lizard";
-    case 4:
-      return "spock";
-  }
-}
+    function getComputerChoice() {
+      var randomNumber = Math.floor(Math.random() * 5);
+      switch (randomNumber) {
+        case 0:
+          return "rock";
+        case 1:
+          return "paper";
+        case 2:
+          return "scissors";
+        case 3:
+          return "lizard";
+        case 4:
+          return "spock";
+      }
+    }
 
-function determineWinner(userChoice, computerChoice) {
-  if (userChoice === computerChoice) {
-    return "The game is a tie!";
-  }
-  if (userChoice === "rock") {
-    if (computerChoice === "scissors") {
-      return "You won!";
+    function determineWinner(userChoice, computerChoice) {
+      if (userChoice === computerChoice) {
+        return "The game is a tie!";
+      }
+      if (userChoice === "rock") {
+        if (computerChoice === "scissors") {
+          return "You won!";
+        }
+      }
+      if (userChoice === "rock") {
+        if (computerChoice === "lizard") {
+          return "You won!";
+        }
+      }
+      if (userChoice === "rock") {
+        if (computerChoice === "paper") {
+          return "You lose!";
+        }
+      }
+      if (userChoice === "rock") {
+        if (computerChoice === "spock") {
+          return "You lose!";
+        }
+      }
+      if (userChoice === 'paper') {
+        if (computerChoice === 'rock') {
+          return 'You won!';
+        }
+      }
+      if (userChoice === 'paper') {
+        if (computerChoice === 'spock') {
+          return 'You won!';
+        }
+      }
+      if (userChoice === 'paper') {
+        if (computerChoice === 'scissors') {
+          return 'You lose!';
+        }
+      }
+      if (userChoice === 'paper') {
+        if (computerChoice === 'lizzard') {
+          return 'You lizzard!';
+        }
+      }
+      if (userChoice === 'scissors') {
+        if (computerChoice === 'rock') {
+          return 'You lose!';
+        }
+      }
+      if (userChoice === 'scissors') {
+        if (computerChoice === 'paper') {
+          return 'You won!';
+        }
+      }
+      if (userChoice === 'scissors') {
+        if (computerChoice === 'lizzard') {
+          return 'You won!';
+        }
+      }
+      if (userChoice === 'scissors') {
+        if (computerChoice === 'spock') {
+          return 'You lose!';
+        }
+      }
+      if (userChoice === 'bomb') {
+        return 'SECRET CODE WIN!';
+      }
+      if (userChoice === "lizard") {
+        if (computerChoice === "spock") {
+          return "You won!";
+        }
+      }
+      if (userChoice === "lizard") {
+        if (computerChoice === "paper") {
+          return "You won!";
+        }
+      }
+      if (userChoice === "lizard") {
+        if (computerChoice === "rock") {
+          return "You lose!";
+        }
+      }
+      if (userChoice === "lizard") {
+        if (computerChoice === "scissors") {
+          return "You lose!";
+        }
+      }
+      if (userChoice === "spock") {
+        if (computerChoice === "rock") {
+          return "You won!";
+        }
+      }
+      if (userChoice === "spock") {
+        if (computerChoice === "scissors") {
+          return "You won!";
+        }
+      }
+      if (userChoice === "spock") {
+        if (computerChoice === "lizzard") {
+          return "You lose!";
+        }
+      }
+      if (userChoice === "spock") {
+        if (computerChoice === "paper") {
+          return "You lose!";
+        }
+      }
     }
-  }
-  if (userChoice === "rock") {
-    if (computerChoice === "lizard") {
-      return "You won!";
-    }
-  }
-  if (userChoice === "rock") {
-    if (computerChoice === "paper") {
-      return "You lose!";
-    }
-  }
-  if (userChoice === "rock") {
-    if (computerChoice === "spock") {
-      return "You lose!";
-    }
-  }
-  if (userChoice === 'paper') {
-    if (computerChoice === 'rock') {
-      return 'You won!';
-    }
-  }
-  if (userChoice === 'paper') {
-    if (computerChoice === 'spock') {
-      return 'You won!';
-    }
-  }
-  if (userChoice === 'paper') {
-    if (computerChoice === 'scissors') {
-      return 'You lose!';
-    }
-  }
-  if (userChoice === 'paper') {
-    if (computerChoice === 'lizzard') {
-      return 'You lizzard!';
-    }
-  }
-  if (userChoice === 'scissors') {
-    if (computerChoice === 'rock') {
-      return 'You lose!';
-    }
-  }
-  if (userChoice === 'scissors') {
-    if (computerChoice === 'paper') {
-      return 'You won!';
-    }
-  }
-  if (userChoice === 'scissors') {
-    if (computerChoice === 'lizzard') {
-      return 'You won!';
-    }
-  }
-  if (userChoice === 'scissors') {
-    if (computerChoice === 'spock') {
-      return 'You lose!';
-    }
-  }
-  if (userChoice === 'bomb') {
-    return 'SECRET CODE WIN!';
-  }
-  if (userChoice === "lizard") {
-    if (computerChoice === "spock") {
-      return "You won!";
-    }
-  }
-  if (userChoice === "lizard") {
-    if (computerChoice === "paper") {
-      return "You won!";
-    }
-  }
-  if (userChoice === "lizard") {
-    if (computerChoice === "rock") {
-      return "You lose!";
-    }
-  }
-  if (userChoice === "lizard") {
-    if (computerChoice === "scissors") {
-      return "You lose!";
-    }
-  }
-  if (userChoice === "spock") {
-    if (computerChoice === "rock") {
-      return "You won!";
-    }
-  }
-  if (userChoice === "spock") {
-    if (computerChoice === "scissors") {
-      return "You won!";
-    }
-  }
-  if (userChoice === "spock") {
-    if (computerChoice === "lizzard") {
-      return "You lose!";
-    }
-  }
-  if (userChoice === "spock") {
-    if (computerChoice === "paper") {
-      return "You lose!";
-    }
-  }
-}
 
-function playGame() {
-  var userChoice = getUserChoice();
-  var computerChoice = getComputerChoice();
-  document.write("User choice: " + userChoice);
-  document.write("<br>");
-  document.write("Computer's choice: " + computerChoice);
-  document.write("<br>");
-  document.write("The result: " + determineWinner(userChoice, computerChoice));
-}
-playGame();
-</script>
+    function playGame() {
+      var userChoice = getUserChoice();
+      var computerChoice = getComputerChoice();
+      document.write("User choice: " + userChoice);
+      document.write("<br>");
+      document.write("Computer's choice: " + computerChoice);
+      document.write("<br>");
+      document.write("The result: " + determineWinner(userChoice, computerChoice));
+    }
+    playGame();
+
+  </script>
+
 </html>
