@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<script>
+function start() {
+  var ready = prompt('Would you like to begin? (Yes or No)').toUpperCase();
+  if (ready === 'YES') {
+    alert('This game is amazing.');
+    newGame();
+  } else {
+    alert('Restart the game, once you are ready to play.');
+  }
+}
+
+function newGame() {
+  alert('You find yourself in the hallway with only one way out. The room looks like an apartment, which leads to multiple rooms, a bedroom, a bathroom, a kitchen, and a living room.');
+  var awake = prompt('Which room should you enter? (Your options are BEDROOM, BATHROOM, KITCHEN, LIVINGROOM, AND DOOR)').toUpperCase();
+  switch (awake) {
+    case 'BEDROOM':
+      alert('You entered the bedroom.');
+      bedRooms();
+      break;
+    case 'BATHROOM':
+      alert('You entered the bathroom.');
+      bathRooms1();
+      break;
+    case 'KITCHEN':
+      alert('You entered the kitchen.');
+      alert('Upon entering the kitchen, you smell a foul scent.');
+      alert('When inspecting the scent you noticed the oven was on.');
+      kitchenRoom();
+      break;
+    case 'LIVINGROOM':
+      alert('You entered the living room.');
+      alert('You find yourself in a normal room, with a normal tv, and a normal couch, and a normal table...You feel that is too normal.')
+      alert("You just can't help but stare.");
+      livingRoom();
+      break;
+    case 'DOOR':
+      alert('You move to the front door.');
+      Door();
+      break;
+    default:
+      alert('Make sure you typed it down properly');
+      newGame();
+  }
+}
+
+function bedRooms() {
+  var bedRoom = prompt('You see a nice and tidy bedroom, the only thing that stands out is the shady and definitely not scary writing on the wall that says "DO YOU KNOW DA WAE" (Yes or No, or Leave)').toUpperCase();
+  if (bedRoom === 'YES') {
+    alert('you hear an audible voice that calls out "Now you know da wae, A 5"');
+    alert('It seems this room serves no purpose anymore.');
+    bedRooms();
+  }
+  if (bedRoom === 'NO') {
+    alert('Nothing happened, maybe you should go to a different room, or rethink about life choices.');
+    bedRooms();
+  }
+  if (bedRoom === 'LEAVE') {
+    alert('You left the bedroom.');
+    newGame();
+  } else {
+    alert('My intelligence is not that great.');
+    bedRooms();
+  }
+}
+
+function bathRooms1() {
+  var bathRoom1 = prompt('you find yourself staring at the most hi-tech toilet, you have ever seen in your life.("Flush" or "Look around" or you can "Leave")').toUpperCase();
+  switch (bathRoom1) {
+    case 'FLUSH':
+      alert("You don't know why you flushed the toilet, but you watched it create a silent whirlpool... You should probably do something else.");
+      bathRooms1();
+      break;
+    case 'LOOK AROUND':
+      alert('You notice a piece of paper on the table where the sink is.');
+      alert('You picked up the paper, and noticed that it is simple math.');
+      quiz1();
+      break;
+    case 'LOOK':
+      alert('You notice a piece of paper on the table where the sink is.');
+      alert('You picked up the paper, and noticed that it is simple math.');
+      quiz1();
+      break;
+    case 'LEAVE':
+      alert('You left the bathroom.');
+      newGame();
+      break;
+    default:
+      alert('My intelligence is not that great.');
+      bathRooms1();
+  }
+}
+
+function quiz1() {
+  var quiz = prompt('12+9=?');
+  if (quiz === '21') {
+    alert('Ding Dong... An audible voice calls out "D 7"');
+    alert('It seems you got the question right.');
+    alert('This room serves no purpose anymore.');
+    bathRooms1();
+  } else {
+    alert('"Simple math"');
+    quiz1();
+  }
+}
+
+function kitchenRoom() {
+  var kitchen1 = prompt("What should you do? (INSPECT or IGNORE the oven)").toUpperCase();
+  switch (kitchen1) {
+    case 'INSPECT':
+      alert('A burst of fire comes out, as you try to look into the oven.');
+      alert('Luckily, the fire did not hit you directly, as you were on the side of the oven and not directly in front of it.');
+      alert('However the fire is spreading throughout the kitchen.');
+      kitchenRoom3();
+      break;
+    case 'IGNORE':
+      alert('The smell became worse as you try to look around for clues.');
+      kitchenRoom2();
+      break;
+    default:
+      alert('I do not understand.');
+      kitchenRoom();
+  }
+}
+
+function kitchenRoom2() {
+  var kitchen2 = prompt("You only have to investigate the RIGHT or LEFT side of the cabinets. (or you could go BACK.)").toUpperCase();
+  if (kitchen2 === 'LEFT') {
+    alert('You find a fire extinguisher.');
+    alert('Nothing here to help find a code.');
+    kitchenRoom2();
+  }
+  if (kitchen2 === 'RIGHT') {
+    alert('You find a cabinet full of spices.');
+    alert('Nothing here to help find a code.');
+    kitchenRoom2();
+  }
+  if (kitchen2 === 'BACK') {
+    alert('You backed away.');
+    kitchenRoom();
+  } else {
+    alert('I do not understand.');
+    kitchenRoom2();
+  }
+}
+
+function kitchenRoom3() {
+  var kitchen3 = prompt("You need to find something to extinguish the fire, or run away. (LOOK or RUN)").toUpperCase();
+  switch (kitchen3) {
+    case 'RUN':
+      alert('you made a dash outside the kitchen, only to find yourself blocked by the door that leads to the outside.');
+      alert('the door is locked with a keypad, with 4 digits.');
+      var doorCode = prompt('What is the Code.');
+      if (doorCode === '5837') {
+        alert('You Escaped.');
+      } else {
+        alert('You were burnt to crisp...Yum.');
+        alert('Restarting the game.');
+        start();
+      }
+      break;
+    case 'LOOK':
+      alert('You desperately search for something to extinguish the fire.');
+      var kitchenLook = prompt("You find yourself looking at 2 cabinets, one on the left and on the right. You only have enough time to search through one cabinet. (LEFT or RIGHT)").toUpperCase();
+      if (kitchenLook === "LEFT") {
+        alert('You open the left cabinet, and found a fire extinguisher');
+        alert('You immediately grab the fire extinguisher, and sprayed at the burning oven.');
+        alert('The fire is extinguished, as you take a moment to breath, you decided to look inside the oven.');
+        alert('You find a letter and a number. B 8');
+        alert('There is no reason to be here anymore.');
+        newGame();
+      }
+      if (kitchenLook === "RIGHT") {
+        alert('You open the right cabinet.');
+        alert('You found nothing but spices.');
+        alert('You were burnt to crisp.');
+        alert('Restarting Game.(More text to go through again....yay..)')
+        newGame();
+      } else {
+        alert('You fumbled...and the fire burnt you to crisp.');
+        alert('Game Over.....Restarting the game.');
+        start();
+      }
+      break;
+    default:
+      alert('I do not understand.');
+      kitchenRoom3();
+  }
+}
+
+function livingRoom() {
+  var livingRooms = prompt('(Which should you inspect. (TV,Table,Couch, or Leave))').toUpperCase();
+  switch (livingRooms) {
+    case "TV":
+      alert('You turn on the TV');
+      alert('The TV shows a camera, that features you...');
+      alert('It turns out you are being watched and recorded.');
+      alert('You immediately turn of the tv, and shook off the creepy feeling');
+      alert('You backed away.');
+      livingRoom();
+      break;
+    case "TABLE":
+      alert("As you approach the table, you notice that there are pictures attached to the top of the table.");
+      alert("With closer inspection on the pictures, It seems to be pictures of people, people you don't even know...");
+      alert("You just can't help but feel like these people are victims.");
+      alert('You decided to back away from the table.');
+      livingRoom();
+      break;
+    case "COUCH":
+      alert('You take apart the couch.');
+      alert('You find a piece of paper');
+      alert('The paper reads "C 3"');
+      alert('You back away.');
+      livingRoom();
+      break;
+    case "LEAVE":
+      alert('You leave the living room');
+      newGame();
+      break;
+    default:
+      alert('I do not understand.');
+      livingRoom();
+  }
+}
+
+function Door() {
+  alert('The door has a keypad lock, it seems to be a 4 digit code.');
+  var code = prompt('What is the code? (Other option is to BACK away.)').toUpperCase();
+  if (code === "BACK") {
+    alert('You backed away.')
+    newGame();
+  }
+  if (code === "5837") {
+    alert('As you input the code in, you hear the door unlock')
+    alert('As you open the door, the door reveals that it leads to a dark and pitch black area.')
+    exitRoom();
+  } else {
+    alert('The code was invalid.')
+    Door();
+  }
+}
+
+function exitRoom() {
+  alert('You now realise that you have a choice, stay in the room forever, or walk into the unknown abyss.')
+  var exit = prompt("STAY or ENTER").toUpperCase();
+  switch (exit) {
+    case "STAY":
+      alert('Atleast you got food in here.')
+      gameOver();
+      break;
+    case "ENTER":
+      alert('You enter into the abyss, unable to go back but only forward.')
+      gameOver();
+      break;
+    default:
+      exitRoom();
+      break;
+  }
+}
+
+function gameOver() {
+  alert('Game Over')
+}
+//The Code is 5837
+</script>
+</body>
+</html>
