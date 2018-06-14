@@ -8,7 +8,7 @@ for (i = 0; i < word.length; i++) {
   secret.push("_");
 }
 while (strikes < 3 && secret.indexOf("_") >= 0) {}
-var letter = prompt(secret.join("") + "\n\n" + "Player 2, Guess a latter.");
+var letter = prompt(secret.join("") + "\n\n" + "Player 2, Guess a letter.");
 if (word.indexOf(letter) < 0) {
   // add a strike
   strikes++;
