@@ -1,157 +1,170 @@
 <!DOCTYPE html>
 <html>
-<head>
-   body {
- background-color:red;
- }
- <script>
- let inventory = [];
 
- function start() {
-   var ready = prompt('Are you ready? (Yes or No)').toUpperCase();
-   if (ready === 'YES') {
-     alert('A lot of text, be prepared.');
-     newGame();
-   } else {
-     alert('Restart the game when you want to play.');
-   }
- }
+  <head>
+  <style>
+  body {
+    background-color: red;
+  }
+  
+  h1 {
+    font-family: Helvetica;
+  }
+  </style>
+    <script>
+      let inventory = [];
 
- function newGame() {
-   alert("The year is ''1989'' you were part of the Medellin Cartel, till you made the great Pablo Escobar angry by not being able to come through on your jobs. Because of Pablo's anger he has gotten his men to lock you away in a house far on the outskirts of Columbia. The men have abandoned you, you are alone. You can try and make your escape.");
-   var awake = prompt('Which room will you enter? (Your options are BEDROOM, BATHROOM, KITCHEN, LIVINGROOM, BACKDOOR)').toUpperCase();
-   switch (awake) {
-     case 'BEDROOM':
-       alert('You are now inside the bedroom.');
-       bedRooms();
-       break;
-     case 'BATHROOM':
-       alert('You are now inside the bathroom.');
-       bathRooms1();
-       break;
-     case 'KITCHEN':
-       alert('You are now inside the kitchen.');
-       alert('The kitchen has splatters of blood everywhere.');
-       alert('The kitchen is a cluster, dishes everywhere. This place is disgusting.');
-       kitchenRoom();
-       break;
-     case 'LIVINGROOM':
-       alert('You entered the living room.');
-       alert('You see a body laying on the sofa, you see blood everywhere.')
-       livingRoom();
-       break;
-     case 'BACKDOOR':
-       alert('You went to the back door.');
-       Door();
-       break;
-     default:
-       alert('Make sure you typed it down properly');
-       newGame();
-   }
- }
+      function start() {
+        var ready = prompt('Are you ready? (Yes or No)').toUpperCase();
+        if (ready === 'YES') {
+          alert('A lot of text, be prepared.');
+          newGame();
+        } else {
+          alert('Restart the game when you want to play.');
+        }
+      }
 
- function bedRooms() {
-   var bedRoom = prompt("The bedroom is a mess, the bed is not made. Clothes are everywhere. You see pills on the counter, the mirror cracked. Not much to explore here.(Leave)").toUpperCase();
-   if (bedRoom === 'LEAVE') {
-     alert('You left the bedroom.');
-     newGame();
-   } else {
-     alert('I do not know what you said.');
-     bedRooms();
-   }
- }
+      function newGame() {
+        alert("The year is ''1989'' you were part of the Medellin Cartel, till you made the great Pablo Escobar angry by not being able to come through on your jobs. Because of Pablo's anger he has gotten his men to lock you away in a house far on the outskirts of Columbia. The men have abandoned you, you are alone. You can try and make your escape.");
+        var awake = prompt('Which room will you enter? (Your options are BEDROOM, BATHROOM, KITCHEN, LIVINGROOM, BACKDOOR)').toUpperCase();
+        switch (awake) {
+          case 'BEDROOM':
+            alert('You are now inside the bedroom.');
+            bedRooms();
+            break;
+          case 'BATHROOM':
+            alert('You are now inside the bathroom.');
+            bathRooms1();
+            break;
+          case 'KITCHEN':
+            alert('You are now inside the kitchen.');
+            alert('The kitchen has splatters of blood everywhere.');
+            alert('The kitchen is a cluster, dishes everywhere. This place is disgusting.');
+            kitchenRoom();
+            break;
+          case 'LIVINGROOM':
+            alert('You entered the living room.');
+            alert('You see a body laying on the sofa, you see blood everywhere.')
+            livingRoom();
+            break;
+          case 'BACKDOOR':
+            alert('You went to the back door.');
+            Door();
+            break;
+          default:
+            alert('Make sure you typed it down properly');
+            newGame();
+        }
+      }
 
- function bathRooms1() {
-   var bathRoom1 = prompt('There is blood everywhere, looks like someone died in here. You think you see something want to explore further? ("Yes" or "No" or you can "Leave")').toUpperCase();
-   switch (bathRoom1) {
-     case 'YES':
-       alert('You notice a knife on the ground, covered with blood.');
-       alert('The knife has no purpose for you.');
-       alert('This room is useless for you.')
-       newGame();
-       break;
-     case 'NO':
-       alert("You can go somewhere else then");
-       newGame();
-       break;
-     case 'LEAVE':
-       newGame();
-       break;
-     default:
-       alert('My intelligence is not that great.');
-       bathRooms1();
-   }
- }
+      function bedRooms() {
+        var bedRoom = prompt("The bedroom is a mess, the bed is not made. Clothes are everywhere. You see pills on the counter, the mirror cracked. Not much to explore here.(Leave)").toUpperCase();
+        if (bedRoom === 'LEAVE') {
+          alert('You left the bedroom.');
+          newGame();
+        } else {
+          alert('I do not know what you said.');
+          bedRooms();
+        }
+      }
 
- function kitchenRoom() {
-   var kitchen1 = prompt("What will you do? (SEARCH or LEAVE the kitchen.)").toUpperCase();
-   switch (kitchen1) {
-     case 'SEARCH':
-       alert('You see diry dishes on the ground.');
-       alert('There is multiple other items on the ground along with the dishes.');
-       alert('Amongst those items, you see keys will you like to pick these up?');
-       let key = prompt('Pick up the keys, YES or NO?');
-       if (key === "yes") {
-         alert('You have picked up the key.')
-         alert('This room has nothing else for you')
-       } else {
-         alert('I guess you will find another way.');
-       }
-       newGame();
-       break;
-     case 'LEAVE':
-       alert('I guess the kitchen does not attract your interest.');
-       newGame();
-       break;
-     default:
-       alert('I do not understand.');
-       kitchenRoom();
-   }
- }
+      function bathRooms1() {
+        var bathRoom1 = prompt('There is blood everywhere, looks like someone died in here. You think you see something want to explore further? ("Yes" or "No" or you can "Leave")').toUpperCase();
+        switch (bathRoom1) {
+          case 'YES':
+            alert('You notice a knife on the ground, covered with blood.');
+            alert('The knife has no purpose for you.');
+            alert('This room is useless for you.')
+            newGame();
+            break;
+          case 'NO':
+            alert("You can go somewhere else then");
+            newGame();
+            break;
+          case 'LEAVE':
+            newGame();
+            break;
+          default:
+            alert('My intelligence is not that great.');
+            bathRooms1();
+        }
+      }
 
- function livingRoom() {
-   var livingRooms = prompt('(Which should you inspect? (Body, Couch, or Leave)').toUpperCase();
-   switch (livingRooms) {
-     case "BODY":
-       alert('The body has multiple blood stains on it');
-       alert('Seems like blood is the only thing on this body.')
-       livingRoom();
-       break;
-     case "COUCH":
-       alert('You search the couch');
-       alert("You don't find anything");
-       livingRoom();
-       break;
-     case "LEAVE":
-       alert('You leave the living room');
-       newGame();
-       break;
-     default:
-       alert('I do not understand.');
-       livingRoom();
-   }
- }
+      function kitchenRoom() {
+        var kitchen1 = prompt("What will you do? (SEARCH or LEAVE the kitchen.)").toUpperCase();
+        switch (kitchen1) {
+          case 'SEARCH':
+            alert('You see diry dishes on the ground.');
+            alert('There is multiple other items on the ground along with the dishes.');
+            alert('Amongst those items, you see keys will you like to pick these up?');
+            let key = prompt('Pick up the keys, YES or NO?');
+            if (key === "yes") {
+              alert('You have picked up the key.')
+              alert('This room has nothing else for you')
+            } else {
+              alert('I guess you will find another way.');
+            }
+            newGame();
+            break;
+          case 'LEAVE':
+            alert('I guess the kitchen does not attract your interest.');
+            newGame();
+            break;
+          default:
+            alert('I do not understand.');
+            kitchenRoom();
+        }
+      }
 
- function Door() {
-   alert('The door has a lock on it. Do you have the key?');
-   var key = prompt("Key, YES or NO?").toUpperCase();
-   if (key === "YES") {
-     alert('You are outta here.');
-     gameOver();
-   } else {
-     alert('You need to go back and find the key');
-   }
-   newGame();
- }
+      function livingRoom() {
+        var livingRooms = prompt('(Which should you inspect? (Body, Couch, or Leave)').toUpperCase();
+        switch (livingRooms) {
+          case "BODY":
+            alert('The body has multiple blood stains on it');
+            alert('Seems like blood is the only thing on this body.')
+            livingRoom();
+            break;
+          case "COUCH":
+            alert('You search the couch');
+            alert("You don't find anything");
+            livingRoom();
+            break;
+          case "LEAVE":
+            alert('You leave the living room');
+            newGame();
+            break;
+          default:
+            alert('I do not understand.');
+            livingRoom();
+        }
+      }
 
- function gameOver() {
-   alert('Game Over!')
- }
-start();
-  // Hope you enjoyed!
-</script>
-</head>
-<body>
- <h1> The Final Adventure </h1>
-</body>
+      function Door() {
+        alert('The door has a lock on it. Do you have the key?');
+        var key = prompt("Key, YES or NO?").toUpperCase();
+        if (key === "YES") {
+          alert('You are outta here.');
+          gameOver();
+        } else {
+          alert('You need to go back and find the key');
+        }
+        newGame();
+      }
+
+      function gameOver() {
+        alert('Game Over!')
+      }
+      start();
+      // Hope you enjoyed!
+
+    </script>
+  </head>
+
+  <body>
+    <center>
+      <h1>The Final Adventure</h1>
+    </center>
+    <center><button type="button" onclick="start()">Play My Game</button></center>
+  </body>
+
 </html>
